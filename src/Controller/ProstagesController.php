@@ -40,7 +40,7 @@ class ProstagesController extends AbstractController
      */
     public function afficherPageStages($id): Response
     {
-        return $this->render('prostages/affichageStages.html.twig', [
+        return $this->render('prostages/affichageDescriptifStage.html.twig', [
             'controller_name' => 'ProstagesController',
             'id'=>$id,
         ]);
