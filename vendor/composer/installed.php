@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v4.4.99',
-        'version' => '4.4.99.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
-        'name' => 'symfony/website-skeleton',
+        'reference' => '822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+        'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+            'dev_requirement' => false,
+        ),
         'composer/package-versions-deprecated' => array(
             'pretty_version' => '1.11.99.4',
             'version' => '1.11.99.4',
@@ -55,6 +64,15 @@
             'reference' => '6d970a11479275300b5144e9373ce5feacfa9b91',
             'dev_requirement' => false,
         ),
+        'doctrine/data-fixtures' => array(
+            'pretty_version' => '1.5.1',
+            'version' => '1.5.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/data-fixtures',
+            'aliases' => array(),
+            'reference' => 'f18adf13f6c81c67a88360dca359ad474523f8e3',
+            'dev_requirement' => true,
+        ),
         'doctrine/dbal' => array(
             'pretty_version' => '3.2.0',
             'version' => '3.2.0.0',
@@ -81,6 +99,15 @@
             'aliases' => array(),
             'reference' => '5b77477ba2981a00b423d1bb17084b87eb57a4a5',
             'dev_requirement' => false,
+        ),
+        'doctrine/doctrine-fixtures-bundle' => array(
+            'pretty_version' => '3.4.1',
+            'version' => '3.4.1.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../doctrine/doctrine-fixtures-bundle',
+            'aliases' => array(),
+            'reference' => '31ba202bebce0b66fe830f49f96228dcdc1503e7',
+            'dev_requirement' => true,
         ),
         'doctrine/doctrine-migrations-bundle' => array(
             'pretty_version' => '3.2.1',
@@ -170,6 +197,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => 'ee0db30118f661fb166bcffbf5d82032df484697',
+            'dev_requirement' => false,
+        ),
+        'fakerphp/faker' => array(
+            'pretty_version' => 'v1.17.0',
+            'version' => '1.17.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../fakerphp/faker',
+            'aliases' => array(),
+            'reference' => 'b85e9d44eae8c52cca7aa0939483611f7232b669',
             'dev_requirement' => false,
         ),
         'friendsofphp/proxy-manager-lts' => array(
@@ -1243,15 +1279,6 @@
             'aliases' => array(),
             'reference' => '24227617a4ddbdf78f8ab12ce2b76dfb54a7d851',
             'dev_requirement' => true,
-        ),
-        'symfony/website-skeleton' => array(
-            'pretty_version' => 'v4.4.99',
-            'version' => '4.4.99.0',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => NULL,
-            'dev_requirement' => false,
         ),
         'symfony/yaml' => array(
             'pretty_version' => 'v4.4.34',

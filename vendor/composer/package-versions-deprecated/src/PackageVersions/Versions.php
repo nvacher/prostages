@@ -23,7 +23,7 @@ final class Versions
      * @deprecated please use {@see self::rootPackageName()} instead.
      *             This constant will be removed in version 2.0.0.
      */
-    const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    const ROOT_PACKAGE_NAME = '__root__';
 
     /**
      * Array of all available composer packages.
@@ -51,6 +51,7 @@ final class Versions
   'doctrine/persistence' => '2.2.3@5e7bdbbfe9811c06e1f745d1c166647d5c47d6ee',
   'doctrine/sql-formatter' => '1.1.2@20c39c2de286a9d3262cc8ed282a4ae60e265894',
   'egulias/email-validator' => '3.1.2@ee0db30118f661fb166bcffbf5d82032df484697',
+  'fakerphp/faker' => 'v1.17.0@b85e9d44eae8c52cca7aa0939483611f7232b669',
   'friendsofphp/proxy-manager-lts' => 'v1.0.5@006aa5d32f887a4db4353b13b5b5095613e0611f',
   'laminas/laminas-code' => '4.5.0@c99ef8e5629c33bfaa3a8f1df773e916af564cd6',
   'monolog/monolog' => '1.26.1@c6b00f05152ae2c9b04a448f99c7590beb6042f5',
@@ -125,6 +126,8 @@ final class Versions
   'twig/extra-bundle' => 'v3.3.4@1fe52d84aa22b7891c7717ef904b1551c8d70100',
   'twig/twig' => 'v3.3.4@65cb6f0b956485e1664f13d023c55298a4bb59ca',
   'webmozart/assert' => '1.10.0@6964c76c7804814a842473e0c8fd15bab0f18e25',
+  'doctrine/data-fixtures' => '1.5.1@f18adf13f6c81c67a88360dca359ad474523f8e3',
+  'doctrine/doctrine-fixtures-bundle' => '3.4.1@31ba202bebce0b66fe830f49f96228dcdc1503e7',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
   'nikic/php-parser' => 'v4.13.2@210577fe3cf7badcc5814d99455df46564f3c077',
   'phar-io/manifest' => '2.0.3@97803eca37d319dfa7826cc2437fc020857acb53',
@@ -160,13 +163,13 @@ final class Versions
   'symfony/phpunit-bridge' => 'v6.0.0@5d6cc6720085084f504d2482fc4a2f268784006b',
   'symfony/web-profiler-bundle' => 'v4.4.31@24227617a4ddbdf78f8ab12ce2b76dfb54a7d851',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'paragonie/random_compat' => '2.*@',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'symfony/website-skeleton' => 'v4.4.99@',
+  'paragonie/random_compat' => '2.*@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+  'symfony/polyfill-ctype' => '*@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+  'symfony/polyfill-iconv' => '*@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+  'symfony/polyfill-php71' => '*@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+  'symfony/polyfill-php70' => '*@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+  'symfony/polyfill-php56' => '*@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
+  '__root__' => 'dev-main@822a0050ea4ae9b93afa8a90ac767e1cb9bc9fb4',
 );
 
     private function __construct()
