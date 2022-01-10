@@ -22,8 +22,11 @@ class ProstagesController extends AbstractController
      */
     public function afficherPageEntreprises(): Response
     {
+        $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
+        $entreprises = $repositoryEntreprise->findAll();
         return $this->render('prostages/affichageEntreprises.html.twig', [
             'controller_name' => 'ProstagesController',
+            'liste_entreprises' => $entreprises,
         ]);
     }
     /**
