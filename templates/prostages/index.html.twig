@@ -10,5 +10,21 @@
 
 <div class="example-wrapper">
     <h1>Bienvenue sur la page d'accueil de Prostages</h1>
+    {% for stage in liste_stages %}
+        <p>Stage<p>
+        <p>{{ stage.titre }}<p>
+        <p>Description du stage :<p>
+        <p>{{ stage.description }}<p>
+        <p>Mail du contact :<p>
+        <p>{{ stage.mail }}<p>
+        <p>Entreprise proposant le stage :<p>
+        <p>{{ stage.entreprise.nom }}<p>
+
+        <p>Formation(s) de ce stage :<p>
+        <ul>{% for formation in stage.formations %}
+            <li>{{ formation.nomCourt }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
 </div>
 {% endblock %}
