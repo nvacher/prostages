@@ -8,18 +8,17 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Formation;
 use App\Entity\Entreprise;
 use App\Entity\Stage;
-use App\Repository\RepositoryFormation;
-use App\Repository\RepositoryEntreprise;
-use App\Repository\RepositoryStage;
+use App\Repository\FormationRepository;
+use App\Repository\EntrepriseRepository;
+use App\Repository\StageRepository;
 
 class ProstagesController extends AbstractController
 {
     /**
      * @Route("/", name="prostages")
      */
-    public function index(): Response
+    public function index(StageRepository $repositoryStages): Response
     {
-        $repositoryStages = $this->getDoctrine()->getRepository(Stage::class);
         $stages = $repositoryStages->findAll();
         return $this->render('prostages/index.html.twig', [
             'liste_stages' => $stages,
@@ -28,9 +27,8 @@ class ProstagesController extends AbstractController
     /**
      * @Route("/entreprises", name="pageEntreprises")
      */
-    public function afficherPageEntreprises(): Response
+    public function afficherPageEntreprises(EntrepriseRepository $repositoryEntreprise): Response
     {
-        $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
         $entreprises = $repositoryEntreprise->findAll();
         return $this->render('prostages/affichageEntreprises.html.twig', [
             'controller_name' => 'ProstagesController',
@@ -40,9 +38,8 @@ class ProstagesController extends AbstractController
     /**
      * @Route("/formations", name="pageFormations")
      */
-    public function afficherPageFormations(): Response
+    public function afficherPageFormations(FormationRepository $repositoryFormations): Response
     {
-        $repositoryFormations = $this->getDoctrine()->getRepository(Formation::class);
         $listeFormations = $repositoryFormations->findAll();
         return $this->render('prostages/affichageFormations.html.twig', [
             'controller_name' => 'ProstagesController',
@@ -52,10 +49,8 @@ class ProstagesController extends AbstractController
     /**
      * @Route("/stages/{id}", name="pageStage")
      */
-    public function afficherPageStage($id): Response
+    public function afficherPageStage(Stage $stage): Response
     {
-        $repositoryStages = $this->getDoctrine()->getRepository(Stage::class);
-        $stage = $repositoryStages->find($id);
         return $this->render('prostages/affichageDescriptifStage.html.twig', [
             'controller_name' => 'ProstagesController',
             'id'=>$id,
@@ -66,13 +61,11 @@ class ProstagesController extends AbstractController
     /**
      * @Route("/stagesParEntreprise/{id}", name="pageStagesParEntreprise")
      */
-    public function afficherPageStagesParEntreprise($id): Response
+    public function afficherPageStagesParEntreprise(Entreprise $entreprise, StageRepository $repositoryStages): Response
     {
-        $repositoryEntreprises = $this->getDoctrine()->getRepository(Entreprise::class);
-        $entreprise = $repositoryEntreprises->find($id);
+        
         $titreEntreprise = $entreprise->getNom();           //récupère le titre de l'entreprise via le repository qu'on vient de faire
-        $repositoryStages = $this->getDoctrine()->getRepository(Stage::class);
-        $listeStages = $repositoryStages->findBy(['entreprise'=>$id]);          //récupère la liste des tuples du repositoryStages (une liste de stages) dont l'id est le même que celui passé en paramètre (id de l'entreprise sélectionnée)
+        $listeStages = $repositoryStages->findBy(['entreprise'=>$entreprise->getId()]);          //récupère la liste des tuples du repositoryStages (une liste de stages) dont l'id est le même que celui passé en paramètre (id de l'entreprise sélectionnée)
         return $this->render('prostages/affichageStagesParEntreprise.html.twig', [
             'controller_name' => 'ProstagesController',
             'titreEntreprise'=>$titreEntreprise,
@@ -83,10 +76,8 @@ class ProstagesController extends AbstractController
     /**
      * @Route("/stagesParFormation/{id}", name="pageStagesParFormation")
      */
-    public function afficherPageStagesParFormation($id): Response
+    public function afficherPageStagesParFormation(Formation $formation): Response
     {
-        $repositoryFormations = $this->getDoctrine()->getRepository(Formation::class);
-        $formation = $repositoryFormations->find($id);
         $titreFormation = $formation->getNomcourt();
         $listeStages = $formation->getListeStages();
         return $this->render('prostages/affichageStagesParFormation.html.twig', [
