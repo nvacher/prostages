@@ -4,22 +4,24 @@
 
 {% block body %}
 <h1>Stages proposés par {{ titreEntreprise }}</h1>
+<table class="table">
+<thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Stage :</th>
+      <th scope="col">Description du stage :</th>
+      <th scope="col">Entreprise :</th>
+    </tr>
+  </thead>
+<tbody>
 {% for stage in listeStages %}
-    <div class="container">
-    <div class="row">
-        <div class="col">
-        {{ stage.titre }}
-        </div>
-        <div class="col">
-        {{ stage.description }}
-        </div>
-        <div class="col">
-        {{ stage.entreprise.nom }}
-        </div>
-        <div class="col">
-        <button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStage', {'id': stage.id})}}';">Consulter le stage</button>
-        </div>
-    </div>
-    </div>
+    <tr>
+      <th scope="row"><button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStage', {'id': stage.id})}}';">Consulter le stage</button></th>
+      <td>{{ stage.titre }}</td>
+      <td>{{ stage.description }}</td>
+      <td>{{ stage.entreprise.nom }}</td>
+    </tr>
 {% endfor %}
+</tbody>
+</table>
 {% endblock %}

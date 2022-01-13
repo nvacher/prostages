@@ -73,7 +73,7 @@ class ProstagesController extends AbstractController
         $titreEntreprise = $entreprise->getNom();           //récupère le titre de l'entreprise via le repository qu'on vient de faire
         $repositoryStages = $this->getDoctrine()->getRepository(Stage::class);
         $listeStages = $repositoryStages->findBy(['entreprise'=>$id]);          //récupère la liste des tuples du repositoryStages (une liste de stages) dont l'id est le même que celui passé en paramètre (id de l'entreprise sélectionnée)
-        return $this->render('prostages/affichageStagesParEntreprise', [
+        return $this->render('prostages/affichageStagesParEntreprise.html.twig', [
             'controller_name' => 'ProstagesController',
             'titreEntreprise'=>$titreEntreprise,
             'listeStages'=>$listeStages,
