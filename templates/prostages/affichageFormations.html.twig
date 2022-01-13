@@ -3,5 +3,22 @@
 {% block title %}Liste formations{% endblock %}
 
 {% block body %}
-<h1>Cette page affichera la liste des formations de l'IUT</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nom court de la formation :</th>
+      <th scope="col">Nom long de la formation :</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+{% for formation in listeFormations %}
+    <tr>
+      <th scope="row">{{ formation.getNomCourt() }}</th>
+      <td>{{ formation.getNomLong() }}</td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStageParFormations', {'id': stage.id})}}';">Consulter la liste de stages</button></td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
 {% endblock %}

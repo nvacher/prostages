@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stages proposés de {{ formation }}{% endblock %}
+
+{% block body %}
+<h1>Stages proposés par {{ formation }}</h1>
+{% for stage in listeStages %}
+    <div class="container">
+    <div class="row">
+        <div class="col">
+        {{ stage.titre }}
+        </div>
+        <div class="col">
+        {{ stage.description }}
+        </div>
+        <div class="col">
+        {{ stage.entreprise.nom }}
+        </div>
+        <div class="col">
+        <button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStage', {'id': stage.id})}}';">Consulter le stage</button>
+        </div>
+    </div>
+    </div>
+{% endfor %}
+{% endblock %}
+

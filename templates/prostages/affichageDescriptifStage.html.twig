@@ -4,4 +4,16 @@
 
 {% block body %}
 <h1>Cette page affichera le descriptif du stage ayant pour identifiant {{ id }}</h1>
+    <p>Stage :<p>
+    <p>{{ stage.titre }}<p>
+    <p>Description du stage :<p>
+    <p>{{ stage.description }}<p>
+    <p>Mail du contact :<p>
+    <p>{{ stage.mail }}<p>
+    <p>Entreprise proposant le stage :<p>
+    <p>{{ stage.entreprise.nom }}<p>
+    <p>Formation(s) de ce stage :<p>
+    <ul>    {% for formation in stage.formations %}
+                <li>{{ formation.nomCourt }}</li>
+            {% endfor %}
 {% endblock %}

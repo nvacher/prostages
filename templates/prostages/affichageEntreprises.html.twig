@@ -4,7 +4,7 @@
 
 {% block body%}
 <h1>Liste des entreprises proposant un stage</h1>
-{% for entreprise in entreprises %}
+{% for entreprise in liste_entreprises %}
 <div class="container">
   <div class="row">
     <div class="col">
@@ -14,8 +14,40 @@
       {{ entreprise.adresse }}
     </div>
     <div class="col">
-      
+      <button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStagesParEntreprise',{'id':entreprise.id}) }}';">Stages de cette entreprise</button>
     </div>
   </div>
 </div>
+{% endfor %}
 {% endblock %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
