@@ -16,7 +16,7 @@
     <tr>
       <th scope="row">{{ formation.getNomCourt() }}</th>
       <td>{{ formation.getNomLong() }}</td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStagesParFormation', {'id': formation.id})}}';">Consulter la liste de stages</button></td>
+      <td><a href = '{{path('pageStagesParFormation', {'id': formation.id})}}';">Consulter la liste de stages</a></td>
     </tr>
 {% endfor %}
 </tbody>

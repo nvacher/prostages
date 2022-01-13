@@ -3,7 +3,7 @@
 {% block title %}Descriptif du stage{% endblock %}
 
 {% block body %}
-<h1>Cette page affichera le descriptif du stage ayant pour identifiant {{ id }}</h1>
+<h1>Descriptif du stage {{ stage.getTitre() }}</h1>
     <p>Stage :<p>
     <p>{{ stage.titre }}<p>
     <p>Description du stage :<p>

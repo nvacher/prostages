@@ -53,7 +53,7 @@ class ProstagesController extends AbstractController
     {
         return $this->render('prostages/affichageDescriptifStage.html.twig', [
             'controller_name' => 'ProstagesController',
-            'id'=>$id,
+            'id'=>$stage->getId(),
             'stage'=>$stage,
         ]);
     }

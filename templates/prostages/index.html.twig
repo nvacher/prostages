@@ -19,7 +19,7 @@
 <tbody>
     {% for stage in liste_stages %}     <! -- Tableau qui affiche les différents stages avec l'entreprise + bouton pour consulter -->
     <tr>
-      <th scope="row"><button type="button" class="btn btn-primary" onclick="window.location.href = '{{path('pageStage', {'id': stage.id})}}';">Consulter le stage</button></th>
+      <th scope="row"><a href = '{{path('pageStage', {'id': stage.id})}}';">Consulter le stage</a></th>
       <td>{{ stage.titre }}</td>
       <td>{{ stage.description }}</td>
       <td>{{ stage.entreprise.nom }}</td>
